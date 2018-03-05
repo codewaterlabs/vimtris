@@ -1,0 +1,30 @@
+{
+  "name": "vimtris",
+  "version": "0.0.0",
+  "description": "A game in reasonml, tetris using vim keys",
+  "main": "index.js",
+  "scripts": {
+    "start": "./lib/bs/bytecode/indexhot.byte",
+    "start:native": "./lib/bs/native/index.native",
+    "build": "bsb -make-world",
+    "build:web": "bsb -make-world -backend js",
+    "build:native": "bsb -make-world -backend native",
+    "clean": "bsb -clean-world",
+    "webpack": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+github.com/codewaterlabs/vimtris"
+  },
+  "keywords": [],
+  "author": "Gudmund Vatn",
+  "license": "MIT",
+  "dependencies": {
+    "rainbow-ui": "git+https://github.com/codewaterlabs/rainbow-ui"
+  },
+  "devDependencies": {
+    "uglifyjs-webpack-plugin": "^1.2.2",
+    "webpack": "^4.1.0",
+    "webpack-cli": "^2.0.10"
+  }
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tetris</title>
+    <style type="text/css">
+      body {
+        margin: 0px;
+        padding: 0px;
+        background-color: #000000;
+        overflow: hidden;
+      }
+    </style>
+    <script>
+      function getGl() {
+        let c = document.getElementsByTagName("canvas")[0];
+        return c.getContext("webgl");
+      }
+    </script>
+  </head>
+  <body>
+    <script src="./require_polyfill.js" data-main="lib/js/src/index.js" data-project-root="./"></script>
+  </body>
+</html>

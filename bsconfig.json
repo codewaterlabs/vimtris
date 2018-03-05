@@ -1,0 +1,12 @@
+{
+  "name": "Vimtris",
+  "sources": "src",
+  "bs-dependencies": ["ReasonglInterface", "ReasonglWeb", "ReasonglNative", "rainbow-ui"],
+  "bs-super-errors": true,
+  "entries": [
+    {"backend": "bytecode", "main-module": "IndexHot"},
+    {"backend": "native", "main-module": "Index"},
+    {"backend": "js", "main-module": "Index"}
+  ],
+  "refmt": 3
+}
