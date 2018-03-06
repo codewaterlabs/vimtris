@@ -49,7 +49,6 @@ let fragmentSource = {|
     uniform sampler2D drop;
     uniform sampler2D gridLight;
     uniform vec4 centerRadius;
-    uniform float completedRows;
 
     varying vec2 vPosition;
     varying vec2 lineCoords;
@@ -105,12 +104,9 @@ let fragmentSource = {|
         // Global pointLight (not using local position)
         vec3 gridLight = (texture2D(gridLight, gridLightPos).xyz * 0.7) + 0.3;
 
-        // Completed rows indication
-        vec3 bg2 = mix(bg, bg * 1.1, step(vPosition.y, -1.0 + completedRows * rowSize));
-
         // Shadow
         float shadow = texture2D(tileShadows, tileShadowsPos).x;
-        vec3 color = mix(bg2 * gridLight, vec3(0.0, 0.0, 0.0), shadow * 0.15);
+        vec3 color = mix(bg * gridLight, vec3(0.0, 0.0, 0.0), shadow * 0.15);
 
         // Aura light
         /*
@@ -136,7 +132,7 @@ let fragmentSource = {|
         color = mix(color, dropColor, dropBeam * 0.2);
 
         // Color + triangleLight
-        vec3 tLight = triangleLight * bg2 * elColor;
+        vec3 tLight = triangleLight * bg * elColor;
         tLight = pow(tLight, vec3(1.0/2.2));
         color = color + tLight;
         // Gamma correction
