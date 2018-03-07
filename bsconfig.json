@@ -1,5 +1,5 @@
 {
-  "name": "Vimtris",
+  "name": "vimtris",
   "sources": "src",
   "bs-dependencies": ["ReasonglInterface", "ReasonglWeb", "ReasonglNative", "rainbow-ui"],
   "bs-super-errors": true,

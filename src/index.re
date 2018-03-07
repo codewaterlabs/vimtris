@@ -191,10 +191,10 @@ let createLeftRow = state => {
                 Scale(0.0),
                 Scale(0.0),
                 Scale(0.0),
-                ScreenScale(0.028)
+                Scale(0.025)
               )
             ),
-          ~spacing=Scene.ScreenScale(0.015),
+          ~spacing=Scene.Scale(0.09),
           ~vAlign=Scene.AlignTop,
           [
             FontDraw.makeSimpleNode(
@@ -254,10 +254,10 @@ let createRightRow = state => {
                 Scale(0.0),
                 Scale(0.0),
                 Scale(0.0),
-                ScreenScale(0.028)
+                Scale(0.025)
               )
             ),
-          ~spacing=Scene.ScreenScale(0.015),
+          ~spacing=Scene.Scale(0.09),
           ~vAlign=Scene.AlignTop,
           [
             FontDraw.makeSimpleNode(
@@ -337,11 +337,10 @@ let createPauseScreen = state => {
         ]
       )
     );
-  Layout.stacked(
-    ~key="pauseScreen",
-    ~hidden=true,
-    [
-      Layout.vertical([
+      Layout.vertical(
+        ~key="pauseScreen",
+        ~hidden=true,
+        [
         FontDraw.makePartNode(
           pauseText,
           state.fontLayout,
@@ -358,8 +357,6 @@ let createPauseScreen = state => {
           ()
         )
       ])
-    ]
-  );
 };
 
 let createGameOverScreen = state => {
@@ -383,11 +380,10 @@ let createGameOverScreen = state => {
         ]
       )
     );
-  Layout.stacked(
-    ~key="gameOverScreen",
-    ~hidden=true,
-    [
-      Layout.vertical([
+      Layout.vertical(
+        ~key="gameOverScreen",
+        ~hidden=true,
+        [
         FontDraw.makePartNode(
           gameOverText,
           state.fontLayout,
@@ -403,8 +399,6 @@ let createGameOverScreen = state => {
           ()
         )
       ])
-    ]
-  );
 };
 
 let createHelpScreen = state => {
@@ -450,12 +444,11 @@ let createHelpScreen = state => {
       )
     );
   Layout.vertical(
-    ~margin=Scene.MarginXY(Scene.Scale(0.12), Scene.Scale(0.0)),
     ~key="helpScreen",
     ~hidden=true,
     [
       Layout.stacked(
-        ~size=Aspect(1.0 /. 0.23),
+        ~size=Aspect(1.0 /. 0.21),
         [
           FontDraw.makePartNode(
             FontText.(
@@ -478,7 +471,7 @@ let createHelpScreen = state => {
             ),
             state.fontLayout,
             ~key="startHelp",
-            ~height=0.23,
+            ~height=0.21,
             ()
           ),
           FontDraw.makePartNode(
@@ -503,12 +496,12 @@ let createHelpScreen = state => {
             state.fontLayout,
             ~hidden=true,
             ~key="gameHelp",
-            ~height=0.23,
+            ~height=0.21,
             ()
           )
         ]
       ),
-      FontDraw.makePartNode(helpText, state.fontLayout, ~height=0.47, ())
+      FontDraw.makePartNode(helpText, state.fontLayout, ~height=0.56, ())
     ]
   );
 };
@@ -535,11 +528,13 @@ let createNextLevelScreen = state =>
   ]);
 
 let createRootNode = state => {
-  let mainSize = Scene.Aspect((14.0 +. 10.0) /. 26.0);
+  open Scene;
+  let mainSize = Aspect((14.0 +. 10.0) /. 26.0);
+  let maxHeight = Pixels(680.0);
   Layout.stacked(
     ~key="root",
-    ~size=Scene.Dimensions(Scale(1.0), Scale(1.0)),
-    ~vAlign=Scene.AlignMiddle,
+    ~size=Dimensions(Scale(1.0), Scale(1.0)),
+    ~vAlign=AlignMiddle,
     [
       Background.makeNode(
         state.bgColor,
@@ -547,7 +542,9 @@ let createRootNode = state => {
           Layout.horizontal(
             ~key="gameHorizontal",
             ~size=mainSize,
+            ~maxHeight,
             ~hidden=true,
+            ~hAlign=AlignCenter,
             [
               createLeftRow(state),
               createBoardNode(state),
@@ -557,10 +554,15 @@ let createRootNode = state => {
         ]
       ),
       Mask.makeNode(),
-      createStartScreen(state),
-      createPauseScreen(state),
-      createHelpScreen(state),
-      createGameOverScreen(state)
+      Layout.stacked(
+        ~maxHeight,
+        [
+          createStartScreen(state),
+          createPauseScreen(state),
+          createHelpScreen(state),
+          createGameOverScreen(state)
+        ]
+      )
     ]
   );
 };
