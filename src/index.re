@@ -187,12 +187,7 @@ let createLeftRow = state => {
         Layout.vertical(
           ~margin=
             Scene.(
-              MarginRBLT(
-                Scale(0.0),
-                Scale(0.0),
-                Scale(0.0),
-                Scale(0.025)
-              )
+              MarginRBLT(Scale(0.0), Scale(0.0), Scale(0.0), Scale(0.025))
             ),
           ~spacing=Scene.Scale(0.09),
           ~vAlign=Scene.AlignTop,
@@ -250,12 +245,7 @@ let createRightRow = state => {
           ~key="nextElements",
           ~margin=
             Scene.(
-              MarginRBLT(
-                Scale(0.0),
-                Scale(0.0),
-                Scale(0.0),
-                Scale(0.025)
-              )
+              MarginRBLT(Scale(0.0), Scale(0.0), Scale(0.0), Scale(0.025))
             ),
           ~spacing=Scene.Scale(0.09),
           ~vAlign=Scene.AlignTop,
@@ -337,26 +327,27 @@ let createPauseScreen = state => {
         ]
       )
     );
-      Layout.vertical(
-        ~key="pauseScreen",
-        ~hidden=true,
-        [
-        FontDraw.makePartNode(
-          pauseText,
-          state.fontLayout,
-          ~key="pauseText",
-          ~height=0.42,
-          ~opacity=0.6,
-          ()
-        ),
-        FontDraw.makePartNode(
-          helpText,
-          state.fontLayout,
-          ~key="pauseHelpText",
-          ~height=0.25,
-          ()
-        )
-      ])
+  Layout.vertical(
+    ~key="pauseScreen",
+    ~hidden=true,
+    [
+      FontDraw.makePartNode(
+        pauseText,
+        state.fontLayout,
+        ~key="pauseText",
+        ~height=0.42,
+        ~opacity=0.6,
+        ()
+      ),
+      FontDraw.makePartNode(
+        helpText,
+        state.fontLayout,
+        ~key="pauseHelpText",
+        ~height=0.25,
+        ()
+      )
+    ]
+  );
 };
 
 let createGameOverScreen = state => {
@@ -380,25 +371,26 @@ let createGameOverScreen = state => {
         ]
       )
     );
-      Layout.vertical(
-        ~key="gameOverScreen",
-        ~hidden=true,
-        [
-        FontDraw.makePartNode(
-          gameOverText,
-          state.fontLayout,
-          ~key="gameOverText",
-          ~height=0.27,
-          ()
-        ),
-        FontDraw.makePartNode(
-          helpText,
-          state.fontLayout,
-          ~key="gameOverHelpText",
-          ~height=0.15,
-          ()
-        )
-      ])
+  Layout.vertical(
+    ~key="gameOverScreen",
+    ~hidden=true,
+    [
+      FontDraw.makePartNode(
+        gameOverText,
+        state.fontLayout,
+        ~key="gameOverText",
+        ~height=0.27,
+        ()
+      ),
+      FontDraw.makePartNode(
+        helpText,
+        state.fontLayout,
+        ~key="gameOverHelpText",
+        ~height=0.15,
+        ()
+      )
+    ]
+  );
 };
 
 let createHelpScreen = state => {

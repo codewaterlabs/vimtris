@@ -20,7 +20,7 @@
   "author": "Gudmund Vatn",
   "license": "MIT",
   "dependencies": {
-    "rainbow-ui": "git+https://github.com/codewaterlabs/rainbow-ui"
+    "rainbow-ui": "git+https://github.com/codewaterlabs/rainbow-ui#a072a7b18c84e192f2f28bbed62441641aa45b41"
   },
   "devDependencies": {
     "uglifyjs-webpack-plugin": "^1.2.2",

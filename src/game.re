@@ -1023,7 +1023,6 @@ let keyPressed = (state, canvas: Gpu.Canvas.t) => {
       }
     )
   | Running =>
-    Js.log(lastKeyCode(Document.window));
     /* Allow different commands on touchDown */
     switch state.touchDown {
     | None =>
@@ -1064,7 +1063,7 @@ let keyPressed = (state, canvas: Gpu.Canvas.t) => {
           }
         }
       )
-    };
+    }
   | Paused =>
     PauseAction(
       switch keyCode {

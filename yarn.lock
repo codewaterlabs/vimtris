@@ -28,11 +28,11 @@ ReasonglInterface@bsansouci/reasongl-interface, "ReasonglInterface@github:bsanso
 
 Tgls@bsansouci/tgls:
   version "0.8.4"
-  resolved "https://codeload.github.com/bsansouci/tgls/tar.gz/469626bc52d8ec488a2f5fdcba7b9eb480beefeb"
+  resolved "https://codeload.github.com/bsansouci/tgls/tar.gz/45c490d8d34425f639b508290c297c5a76277bcf"
 
 Tsdl@bsansouci/tsdl:
   version "0.9.1"
-  resolved "https://codeload.github.com/bsansouci/tsdl/tar.gz/421f63717bb7bb2d7dbb8ac54706a86ffb89f862"
+  resolved "https://codeload.github.com/bsansouci/tsdl/tar.gz/197cb1337397035d7a24190c52f3b4549a4a17da"
   dependencies:
     sdl2 bsansouci/SDL-mirror#fast
 
@@ -1927,8 +1927,8 @@ github-username@^4.0.0:
     gh-got "^6.0.0"
 
 gl-matrix@*:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/gl-matrix/-/gl-matrix-2.4.0.tgz#2089b13301a29eec822d9d99dffc1f78ee9a3c50"
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/gl-matrix/-/gl-matrix-2.6.1.tgz#1bc7f7b396f4ae80abdb4db9a98cd07d170b9004"
 
 glob-all@^3.1.0:
   version "3.1.0"
@@ -2831,7 +2831,7 @@ map-visit@^1.0.0:
 
 matchenv@bsansouci/matchenv:
   version "0.1.0"
-  resolved "https://codeload.github.com/bsansouci/matchenv/tar.gz/076d9d6b55c62721b289bdfa024e4f2c659e492b"
+  resolved "https://codeload.github.com/bsansouci/matchenv/tar.gz/b150d1cc87e16090a2249f320d99deeed16ece87"
   dependencies:
     bs-platform bsansouci/bsb-native#2.1.1
 
@@ -3539,9 +3539,9 @@ querystring@0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
 
-"rainbow-ui@git+https://github.com/codewaterlabs/rainbow-ui":
+"rainbow-ui@git+https://github.com/codewaterlabs/rainbow-ui#a072a7b18c84e192f2f28bbed62441641aa45b41":
   version "0.0.0"
-  resolved "git+https://github.com/codewaterlabs/rainbow-ui#fa71b116afd6efad971e290375a068c3575d3a8e"
+  resolved "git+https://github.com/codewaterlabs/rainbow-ui#a072a7b18c84e192f2f28bbed62441641aa45b41"
   dependencies:
     ReasonglInterface "github:bsansouci/reasongl-interface"
     ReasonglNative "github:bsansouci/reasongl-native"
@@ -3876,7 +3876,7 @@ scoped-regex@^1.0.0:
 
 sdl2@bsansouci/SDL-mirror#fast:
   version "2.0.5"
-  resolved "https://codeload.github.com/bsansouci/SDL-mirror/tar.gz/2f5920d702e435f4a2b21c263ff5becae796a591"
+  resolved "https://codeload.github.com/bsansouci/SDL-mirror/tar.gz/129e47282cc72b7d51246b18a4da48d919799092"
   dependencies:
     yauzl "^2.9.1"
 
